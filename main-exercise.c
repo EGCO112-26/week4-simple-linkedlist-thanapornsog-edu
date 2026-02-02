@@ -3,7 +3,7 @@
 #include <string.h>
 #include "node.h"
 
-// Function Prototypes
+// 2. Function Prototypes
 void insert(nodePtr *head, int id, char *name);
 void print_list(nodePtr head);
 void delete_list(nodePtr head);
