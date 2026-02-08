@@ -1,28 +1,12 @@
-//
-//  node.h
-//  simple linkedlist
-//
-//  Created by Mingmanas Sivaraksa on 4/2/2566 BE.
-//
-#ifndef stdnode_h
-#define stdnode_h
-
-#include <string.h> 
-
-struct node {
-    int value;
-    struct node *next;
-};
+#ifndef NODE_H
+#define NODE_H
 
 struct std_node {
     int id;
-    char name[30];
+    char name[50];
     struct std_node *next;
 };
 
-typedef struct node Node;
-typedef Node* NodePtr;
-typedef struct std_node StdNode;
-typedef StdNode* nodePtr;
+typedef struct std_node* nodePtr;
 
-#endif /* node_h */
+#endif
