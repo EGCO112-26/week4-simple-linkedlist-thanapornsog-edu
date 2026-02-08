@@ -143,4 +143,4 @@ void delete_list(nodePtr *head) {
         *head = (*head)->next;
         free(tmp);
     }
-}
+ }
