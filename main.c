@@ -42,6 +42,42 @@ void insert(nodePtr *head, int id, char *name) {
     new_node->name[sizeof(new_node->name) - 1] = '\0';
     new_node->next = NULL;
 
+    if (*head == NULL) {
+        *head = new_node;
+        return;
+    }
+
+    nodePtr current = *head;
+    while (current->next != NULL) {
+        current = current->next;
+    }
+
+    current->next = new_node;
+}
+
+void print_list(nodePtr head) {
+    nodePtr tmp = head;
+    while (tmp != NULL) {
+        printf("%d %s\n", tmp->id, tmp->name);
+        tmp = tmp->next;
+    }
+}
+
+void delete_list(nodePtr *head) {
+    nodePtr tmp;
+    while (*head != NULL) {
+        tmp = *head;
+        *head = (*head)->next;
+        free(tmp);
+    }
+}    nodePtr new_node = (nodePtr)malloc(sizeof(struct std_node));
+    if (new_node == NULL) return;
+
+    new_node->id = id;
+    strncpy(new_node->name, name, sizeof(new_node->name));
+    new_node->name[sizeof(new_node->name) - 1] = '\0';
+    new_node->next = NULL;
+
     if (*head == NULL || (*head)->id > id) {
         new_node->next = *head;
         *head = new_node;
