@@ -65,6 +65,11 @@ void delete_list(nodePtr *head) {
         *head = (*head)->next;
         free(tmp);
     }
+}    while (*head != NULL) {
+        tmp = *head;
+        *head = (*head)->next;
+        free(tmp);
+    }
 }    nodePtr new_node = (nodePtr)malloc(sizeof(struct std_node));
     if (new_node == NULL) return;
 
